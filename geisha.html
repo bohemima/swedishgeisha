@@ -2,11 +2,15 @@
   <title>geisha</title>
   <script type="text/javascript" src="http://timeago.yarp.com/jquery.timeago.js"></script>
   <script type="text/javascript">
+
+    jQuery.timeago.settings.allowFuture = true;
+
     $(function () {
       setInterval(function () {
         $('time:not([data-time="time"])').attr('data-time', 'time').timeago();
       }, 100);
     });
+
   </script>
 </head>
 
