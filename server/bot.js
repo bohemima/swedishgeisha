@@ -4,8 +4,9 @@ var handle = query.observe({
   added: function(message) {
     if (!message.is_bot) {
 	var n = Math.floor(Math.random()*5);
-	var message = null;	    
-	switch (n) {
+	var message = null;
+	var fiber = Fiber(function() {
+	    switch (n) {
 	    case 0:
 		message = 'Tihi, your shirt is untucked. *giggles*';
 		break;
@@ -25,6 +26,9 @@ var handle = query.observe({
 		message = 'Hi! You are so cute!';
 		break;
 	    Messages.insert({ author: 'Ichimitsu', timestamp: new Date(), text: message, is_bot: true }) ;
+	});
+
+	Meteor.setTimeout(function() { fiber.run(); }, n*1000);
     }
   }
 });
