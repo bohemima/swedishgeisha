@@ -5,12 +5,6 @@
 
     jQuery.timeago.settings.allowFuture = true;
 
-    $(function () {
-      setInterval(function () {
-        $('time:not([data-time="time"])').attr('data-time', 'time').timeago();
-      }, 100);
-    });
-
   </script>
   <link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
 </head>
@@ -25,7 +19,7 @@
     {{#if logged_in}}
       {{> room}}
     {{else}}
-    <form>
+    <form id="loginForm">
       <label>
         Name: <input type="text" id="user-name" />
       </label>
@@ -41,7 +35,8 @@
       {{#each messages}}
         <li>
           <span>{{author}} :</span> {{text}}
-          <time class="timestamp" datetime="{{timestamp}}"></time>
+          <time class="time-{{_id}}" datetime="{{timestamp}}"></time>
+          {{rendered}}
         </li>
       {{/each}}
     </ul>

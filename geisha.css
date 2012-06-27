@@ -66,6 +66,12 @@ h1
 	font-family:Arial, Verdana, sans-serif;
 }
 
+form#loginForm
+{
+	font-family: Arial, Verdana, sans-serif;
+	margin-left:20px;
+}
+
 #messages
 {
 	margin:10px 0;
@@ -91,4 +97,15 @@ h1
 {
 	display:inline-block;
 	float:right;
+}
+
+.roomScreen #msg
+{
+	float:left;
+}
+
+.roomScreen button[type=submit]
+{
+	float:left;
+	clear:both;
 }
