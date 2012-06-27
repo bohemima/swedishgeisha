@@ -61,9 +61,8 @@ h1
 }
 .roomScreen
 {
-	width:660px;
-	margin:0px auto;
-	padding-right:300px;
+	width:850px;
+	margin-left:20px;
 	font-family:Arial, Verdana, sans-serif;
 }
 
@@ -79,7 +78,7 @@ h1
 
 #messages li:nth-child(odd)
 {
-	background-color:rgba(200, 10, 10, 0.7);
+	background-color:rgba(180, 60, 60, 0.8);
 }
 
 #messages li:nth-child(even)
