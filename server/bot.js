@@ -16,7 +16,7 @@ var handle = query.observe({
 	    message = 'Hi! You are so cute!';
 	}
 
-	Messages.insert({ author: 'Ichimitsu', timestamp: new Date(), text: message, is_bot: true }) ;
+	Messages.insert({ author: 'Ichimitsu', timestamp: new Date(), text: message+"n: "+n, is_bot: true }) ;
     }
   }
 });
