@@ -1,7 +1,3 @@
-Chatrooms = new Meteor.Collection("chatrooms");
-Messages = new Meteor.Collection("messages");
-
-
 if (Meteor.is_client) {
 
   Template.main.logged_in = function () {
