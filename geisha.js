@@ -20,7 +20,7 @@ if (Meteor.is_client) {
     'click button': function() {
       var msg = $("#msg").val();
 
-      if (msg.length == 0 || user.length == 0) {
+      if (msg.length == 0) {
         alert('Men skriv något tard');
         return;
       }
