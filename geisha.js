@@ -1,15 +1,21 @@
+Chatrooms = new Meteor.Collection("chatrooms");
+Messages = new Meteor.Collection("messages");
+
+
 if (Meteor.is_client) {
   Template.hello.greeting = function () {
     return "Welcome to geisha.";
   };
 
-  Template.hello.events = {
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
+  Template.room.messages = function (){
+    return Messages.find({});
   };
+
+  Template.room.events = {
+    'click button': function() {
+      Messages.insert({author: $("#user").val(), "text": $("#msg").val() });
+    }
+  }
 }
 
 if (Meteor.is_server) {
