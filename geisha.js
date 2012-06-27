@@ -17,6 +17,13 @@ if (Meteor.is_client) {
     return Messages.find({}, {sort: { timestamp: 1 }});
   };
 
+  Template.room.rendered = function () {
+    var id = '.time-' + this._id;
+    Meteor.defer(function () {
+      $(id).filter(':not([data-time="time"])').attr('data-time', 'time').timeago();
+    });
+  };
+
   Template.room.events = {
     'click button': function(e) {
       e.preventDefault();
