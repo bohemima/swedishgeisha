@@ -5,7 +5,7 @@ var handle = query.observe({
     if (!message.is_bot) {
 	var n = Math.floor(Math.random()*5);
 	var message = null;
-	setTimeout(function() {
+//	setTimeout(function() {
 	    switch (n) {
 	    case 0:
 		message = 'Tihi, your shirt is untucked. *giggles*';
@@ -28,7 +28,7 @@ var handle = query.observe({
 	    }
 
 	    Messages.insert({ author: 'Ichimitsu', timestamp: new Date(), text: message, is_bot: true }) ;
-	}, n*1000);
+//	}, n*1000);
     }
   }
 });
