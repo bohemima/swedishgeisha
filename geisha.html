@@ -19,12 +19,14 @@
     {{#if logged_in}}
       {{> room}}
     {{else}}
-    <form id="loginForm">
-      <label>
-        Name: <input type="text" id="user-name" />
-      </label>
-      <input type="submit" value="Login" />
-    </form>
+    <div class="loginScreen">
+      <form>
+        <label for="user-name">Name: </label>
+        <div class="input-append">
+          <input id="user-name"/><button type="submit" class="btn">Login</button>
+        </div>
+      </form>
+    </div>
     {{/if}}
   </div>
 </template>
@@ -42,8 +44,9 @@
     </ul>
     <form>
       <label for="msg">Message: </label>
-      <input id="msg" />
-      <button type="submit">&rArr; Send</button>
+      <div class="input-append">
+        <input id="msg" /><button type="submit" class="btn">&rArr; Send</button>
+      </div>
     </form>
   </div>
 </template>

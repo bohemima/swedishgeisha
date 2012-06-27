@@ -66,7 +66,7 @@ h1
 	font-family:Arial, Verdana, sans-serif;
 }
 
-form#loginForm
+.loginScreen form
 {
 	font-family: Arial, Verdana, sans-serif;
 	margin-left:20px;
@@ -104,8 +104,7 @@ form#loginForm
 	float:left;
 }
 
-.roomScreen button[type=submit]
+.loginScreen #user-name
 {
 	float:left;
-	clear:both;
 }
