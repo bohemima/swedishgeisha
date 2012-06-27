@@ -52,7 +52,7 @@ var handle = query.observe({
 		Messages.insert({ author: 'Ichimitsu', timestamp: new Date(), text: message, is_bot: true }) ;
 	});
 
-	Meteor.setTimeout(function() { fiber.run(); }, n*1000);
+	Meteor.setTimeout(function() { fiber.run(n); }, n*1000);
     }
   }
 });
