@@ -9,7 +9,7 @@ if (Meteor.is_client) {
 
   Template.room.events = {
     'click button': function() {
-      Messages.insert({author: $("#user").val(), "text": $("#msg").val() });
+      Messages.insert({author: $("#user").val(), "text": $("#msg").val(), "timestamp":new Date() });
       $("#msg").val('').focus();
     }
   }
