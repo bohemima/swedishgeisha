@@ -2,7 +2,7 @@ var query = Messages.find({});
 
 var handle = query.observe({
   added: function(message) {
-    if (!message.is_bot) {
+    /*if (!message.is_bot) {
 	var n = Math.floor(Math.random()*5);
 	var message = null;
 	var fiber = Fiber(function() {
@@ -30,7 +30,7 @@ var handle = query.observe({
 		Messages.insert({ author: 'Ichimitsu', timestamp: new Date(), text: message, is_bot: true }) ;
 	});
 
-	Meteor.setTimeout(function() { fiber.run(); }, n*1000);
-    }
+	Meteor.setTimeout(function() { fiber.run(n); }, n*1000);
+    }*/
   }
 });
