@@ -4,7 +4,7 @@ Messages = new Meteor.Collection("messages");
 
 if (Meteor.is_client) {
   Template.room.messages = function (){
-    return Messages.find({});
+    return Messages.find({}, {sort: { timestamp: 1 }});
   };
 
   Template.room.events = {

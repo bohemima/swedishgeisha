@@ -1,11 +1,25 @@
 <head>
   <title>geisha</title>
+  <script type="text/javascript" src="http://timeago.yarp.com/jquery.timeago.js"></script>
+  <script type="text/javascript">
+
+    jQuery.timeago.settings.allowFuture = true;
+
+    $(function () {
+      setInterval(function () {
+        $('time:not([data-time="time"])').attr('data-time', 'time').timeago();
+      }, 100);
+    });
+
+  </script>
 </head>
 
 <body>
   <h1>Welcome to Swedish Geisha</h1>
 
   {{> room}}
+
+
 </body>
 
 <template name="room">
@@ -14,7 +28,7 @@
       {{#each messages}}
         <li>
           <span>{{author}} :</span> {{text}}
-          <span class="timestamp">[{{timestamp}}]</span>
+          <time class="timestamp" datetime="{{timestamp}}"></time>
         </li>
       {{/each}}
     </ul>

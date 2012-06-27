@@ -76,7 +76,7 @@ h1
 	background-color:lightgray;
 }
 
-#messages li span.timestamp
+#messages li time
 {
 	display:inline-block;
 	float:right;
