@@ -61,8 +61,9 @@ h1
 }
 .roomScreen
 {
-	width:960px;
+	width:660px;
 	margin:0px auto;
+	padding-right:300px;
 	font-family:Arial, Verdana, sans-serif;
 }
 
