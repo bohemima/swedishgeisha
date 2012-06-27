@@ -3,10 +3,6 @@ Messages = new Meteor.Collection("messages");
 
 
 if (Meteor.is_client) {
-  Template.hello.greeting = function () {
-    return "Welcome to geisha.";
-  };
-
   Template.room.messages = function (){
     return Messages.find({});
   };
