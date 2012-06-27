@@ -14,6 +14,7 @@ if (Meteor.is_client) {
   Template.room.events = {
     'click button': function() {
       Messages.insert({author: $("#user").val(), "text": $("#msg").val() });
+      $("#msg").val('').focus();
     }
   }
 }
