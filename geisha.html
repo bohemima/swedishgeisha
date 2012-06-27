@@ -20,20 +20,19 @@
 </body>
 
 <template name="main">
-  {{#if logged_in}}
   <div id="wrapper">
     <h1>Welcome to Swedish Geisha</h1>
-    {{> room}}
+    {{#if logged_in}}
+      {{> room}}
+    {{else}}
+    <form>
+      <label>
+        Name: <input type="text" id="user-name" />
+      </label>
+      <input type="submit" value="Login" />
+    </form>
+    {{/if}}
   </div>
-  {{else}}
-  <div id="wrapper">
-    <label>
-      Name: <br />
-      <input type="text" id="user-name" />
-    </label>
-    <button>Login</button>
-  </div>
-  {{/if}}
 </template>
 
 <template name="room">
@@ -46,7 +45,7 @@
         </li>
       {{/each}}
     </ul>
-    <form action="javascript:void(0)">
+    <form>
       <label for="msg">Message: </label>
       <input id="msg" />
       <button type="submit">&rArr; Send</button>

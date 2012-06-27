@@ -5,7 +5,8 @@ if (Meteor.is_client) {
   };
 
   Template.main.events = {
-    'click button': function () {
+    'submit form': function (e) {
+      e.preventDefault();
       var n = $('#user-name').val();
       if(!n) { return ; }
       Session.set("name", n);
@@ -17,7 +18,8 @@ if (Meteor.is_client) {
   };
 
   Template.room.events = {
-    'click button': function() {
+    'click button': function(e) {
+      e.preventDefault();
       Messages.insert({author: Session.get("name"), "text": $("#msg").val(), "timestamp":new Date() });
       $("#msg").val('').focus();
     }
