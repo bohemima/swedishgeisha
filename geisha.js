@@ -5,7 +5,8 @@ if (Meteor.is_client) {
   };
 
   Template.main.events = {
-    'click button': function () {
+    'submit form': function (e) {
+      e.preventDefault();
       var n = $('#user-name').val();
       if(!n) { return ; }
       Session.set("name", n);
@@ -17,8 +18,16 @@ if (Meteor.is_client) {
   };
 
   Template.room.events = {
-    'click button': function() {
-      Messages.insert({author: Session.get("name"), "text": $("#msg").val(), "timestamp":new Date() });
+    'click button': function(e) {
+      e.preventDefault();
+      var msg = $("#msg").val();
+
+      if (msg.length == 0) {
+        alert('Men skriv något tard');
+        return;
+      }
+
+      Messages.insert({author: Session.get("name"), "text": msg, "timestamp":new Date() });
       $("#msg").val('').focus();
     }
   }
