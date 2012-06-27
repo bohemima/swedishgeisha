@@ -77,9 +77,14 @@ h1
 	padding:10px;
 }
 
+#messages li:nth-child(odd)
+{
+	background-color:rgba(200, 10, 10, 0.7);
+}
+
 #messages li:nth-child(even)
 {
-	background-color:lightgray;
+	background-color:rgba(255, 255, 255, 0.7);
 }
 
 #messages li time
