@@ -12,7 +12,10 @@
   <div class="roomScreen">
     <ul id="messages">
       {{#each messages}}
-        <li><span">{{author}} [{{timestamp}}]:</span> {{text}}</li>
+        <li>
+          <span>{{author}} :</span> {{text}}
+          <span class="timestamp">[{{timestamp}}]</span>
+        </li>
       {{/each}}
     </ul>
     <form action="javascript:void(0)">
