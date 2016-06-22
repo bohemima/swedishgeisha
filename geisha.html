@@ -17,6 +17,7 @@
   <div id="wrapper">
     <h1>Welcome to Swedish Geisha</h1>
     {{#if logged_in}}
+      {{> roomlist}}
       {{> room}}
     {{else}}
     <div class="loginScreen">
@@ -29,6 +30,13 @@
     </div>
     {{/if}}
   </div>
+</template>
+
+<template name="roomlist">
+  <ul>
+
+  </ul>
+  <button>Create room</button>
 </template>
 
 <template name="room">
